@@ -34,6 +34,12 @@ public class SortTest {
 
         Collections.sort(list, Comparator.comparingInt(Item::getB).reversed());
         System.out.println(list);
+
+
+        /** 다중조건으로 정렬 하기 */
+        // Item::getB -> Interface 문법 ? 함수를 변수처럼 사요할 수 있는것
+        Collections.sort(list, Comparator.comparingInt(Item::getB).thenComparingInt(Item::getA).thenComparingInt(Item::getC));
+        System.out.println(list);
     }
 
 }
